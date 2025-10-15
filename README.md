@@ -1,1 +1,0 @@
-# lucas-sterrett.github.io
