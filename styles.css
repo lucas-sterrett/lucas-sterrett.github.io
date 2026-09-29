@@ -1,0 +1,96 @@
+:root {
+    --ink: #121212;
+    --muted: #767676;
+    --rule: #e2e2e2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.masthead,
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 20px;
+}
+
+.masthead { padding-top: 48px; text-align: center; }
+
+.masthead-title {
+    font: 900 clamp(2.4rem, 8vw, 4rem)/1 "Playfair Display", Georgia, serif;
+    margin: 0 0 24px;
+}
+
+.sections {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    padding: 12px 0;
+    border-top: 3px double var(--ink);
+    border-bottom: 1px solid var(--ink);
+    font: 700 12px/1 "Libre Franklin", Helvetica, Arial, sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 40px;
+}
+
+section { padding-top: 40px; scroll-margin-top: 12px; }
+
+section + section { border-left: 1px solid var(--rule); padding-left: 40px; margin-left: -20px; }
+
+h2 {
+    font: 900 1.5rem/1.1 "Playfair Display", Georgia, serif;
+    margin: 0 0 8px;
+}
+
+h3 {
+    font: 700 11px/1 "Libre Franklin", Helvetica, Arial, sans-serif;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 28px 0 0;
+}
+
+ul { list-style: none; margin: 0; padding: 0; }
+
+li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.name { font-size: 1.1rem; }
+li a:hover .name { text-decoration: underline; text-underline-offset: 3px; }
+
+.tag {
+    font: 12px "Libre Franklin", Helvetica, Arial, sans-serif;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+main { padding-bottom: 64px; }
+
+@media (max-width: 900px) {
+    #content { grid-template-columns: 1fr; }
+    section + section { border-left: 0; padding-left: 0; margin-left: 0; }
+}
